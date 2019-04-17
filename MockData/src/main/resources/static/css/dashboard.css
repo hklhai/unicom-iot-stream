@@ -1,0 +1,61 @@
+body{
+    overflow-x: hidden;
+}
+.content,.content2{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top: -40px;
+    left: 0px;
+    overflow-x: hidden;
+}
+p{
+    width: 100%;
+    height:40px;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+    position: absolute;
+    z-index: 104;
+    background: #fff;
+}
+p span{
+    cursor: pointer;
+}
+.content iframe, .content2 iframe{
+    width: 100%;
+    height: 100%;
+}
+.content{
+    z-index: 102;
+}
+.content iframe{
+    height: 1365px;
+}
+.content2{
+    z-index: 100;
+    z-index: 100;
+    display: none;
+    overflow-x: hidden;
+}
+.content2 iframe{
+    height: 375px;
+}
+
+/*电视剧、上映电影、网络文学*/
+p{
+    top: 1305px; /*值为content-95px的高度*/
+}
+.content{
+    height: 1380px;  /*高度比iframe大些*/
+}
+.content iframe{
+    height: 1365px;
+}
+.content2{
+    top: 1305px;/*值为p的top值+20px*/
+    height: 410px;/*高度比iframe大些*/
+}
+.content2 iframe{
+    height: 375px;
+}

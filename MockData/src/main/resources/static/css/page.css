@@ -1,0 +1,56 @@
+#page_control{
+    color:#aaa;
+    float: right;
+    margin-top: 30px;
+}
+#pageControl span{
+    font-weight:bold;
+    font-size:14px;
+
+}
+#pageControl span a:hover{
+    font-size:12px;
+    font-weight: bold;
+    color: #873838;
+}
+#page_control .s_space{
+    display:inline-block;
+    width:10px;}
+#page_control{
+    float:right;
+    font-weight:bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+#curpage{
+    width:48px;
+    margin:0 5px;
+}
+#pageControl span.prePage,#pageControl span.nextPage,#pageControl span.gotoPage{
+    cursor:pointer;
+    width:48px;
+    height:21px;
+    display: inline-block;
+    border-radius:3px;
+    padding:3px 3px;
+}
+#queryDiv{
+    float:right;
+    padding:5px 30px;
+
+}
+#page_control input[type="text"]{
+    height:22px;
+    border: 1px solid #d4d4d4;
+    padding:2px 5px;
+    width: 60px;
+}
+#page_control input[type="submit"]{
+    height:35px;
+    width:50px;
+    border:none;
+    background-color:#0c89ff;
+    color:#ffffff;
+    margin-left:10px;
+    font-size:16px;
+}

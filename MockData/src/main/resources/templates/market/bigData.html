@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>查询</title>
+    <link rel="stylesheet" href="static/css/reset.css"/>
+    <link rel="stylesheet" href="static/css/page.css"/>
+    <link rel="stylesheet" href="static/css/bootstrap.css"/>
+    <script src="static/scripts/jquery-3.2.1.min.js"></script>
+    <script src="static/js/pagination.js"></script>
+    <script src="static/scripts/pagination.min.js"></script>
+    <script src="static/js/bigData.js"></script>
+    <style>
+        .container{
+        }
+
+        p.item{
+            height: 40px;
+            width: 100%;
+            font-size: 16px;
+            line-height: 40px;
+            margin-bottom: 0px;
+        }
+        .report{
+            width: 100%;
+        }
+        .report #main1{
+            width: 600px;
+            height: 450px;
+            float: left;
+            margin-right: 20px;
+        }
+        .report #main2{
+            width: 600px;
+            height: 450px;
+            float: left;
+        }
+        .item input[type='text']{
+            width: 200px;
+            height: 30px;
+            line-height:30px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 5px;
+        }
+        button{
+            width: 80px;
+            height: 30px;
+            border-radius: 6px;
+            border: none;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            letter-spacing: 12px;
+            text-align: right;
+            line-height: 30px;
+            font-size: 14px;
+            color: #000;
+            margin-left: 150px;
+        }
+        .panel h3{
+            text-align: center;
+        }
+        table thead tr{
+            font-weight: bold;
+            font-size: 13px;
+        }
+        table tbody tr td:last-child{
+            cursor: pointer;
+            color: red;
+            text-decoration: underline
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="panel panel-default">
+        <h3>数据采集总量列表</h3>
+        <!--<div class="panel-heading"></div>-->
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>序号</td>
+                    <td>猫眼电影</td>
+                    <td>网络文学</td>
+                    <td>爱奇艺</td>
+                    <td>图书</td>
+                    <td>时间</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="page_control">
+            <span class="prePage" style="line-height: 21px;"><a href="javascript:;">上一页</a></span>
+            <span class="s_space"></span>
+            <span class="nextPage" style="line-height: 21px;"><a href="javascript:;">下一页</a></span>
+            <span class="s_space"></span>
+            第<span class="pageNo"></span>
+            页/共<span class="totalPage"></span>页
+            <span class="s_space"></span>
+            到第<input name="curPage" id="curPage" type="text"/>页
+            <span class="s_space"></span>
+            <span class="gotoPage" style="line-height: 21px;"><a href="javascript:;">跳转</a></span>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
+
+

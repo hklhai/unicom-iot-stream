@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>报告</title>
+    <link rel="stylesheet" href="static/css/reset.css"/>
+    <link href="static/css/bootstrap.css" rel="stylesheet"/>
+    <script src="static/scripts/jquery-3.2.1.min.js"></script>
+    <style>
+        .contener{
+            height:100%;
+            width: 960px;
+            margin: 0 auto;
+            margin-bottom: 40px;
+        }
+        .contener h4{
+            /*font-size: 26px;*/
+            /*text-align: center;*/
+            /*height: 50px;*/
+            /*line-height: 50px;*/
+            /*font-weight: bolder;*/
+            font-size: 26px;
+            text-align: center;
+            height: 70px;
+            line-height: 70px;
+            font-weight: bolder;
+            position: absolute;
+            width: 960px;
+            z-index: 5555555555;
+            margin: 0 auto;
+            background: #fff;
+            top: -10px;
+        }
+        .table{
+            width: 600px;
+            margin: 0;
+        }
+        .table tr td:nth-child(1),.table tr td:nth-child(3){
+            width:20%;
+            text-align: right;
+        }
+        .table tr td:nth-child(2),.table tr td:nth-child(4){
+            width:30%;
+            text-align: left;
+        }
+        #dataShow{
+            width: 1150px;
+            overflow-y: hidden;
+            margin-left: -180px;
+            position: relative;
+        }
+        .mask-btm{
+            height:100px;
+            background: #fff;
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+        }
+        .mask{
+            height:100%;
+            width:100%;
+            position: fixed;
+            top: 100px;
+            left: 0px;
+            z-index: 5555;
+        }
+        .mask1{
+            width:200px;
+            height: 100%;
+            background: #fff;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            z-index: 555;
+            display:none;
+        }
+        .info{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 555;
+            background: #fff;
+        }
+        .iframe-div{
+            position: absolute;
+            top: 60px;
+            left: 0px;
+            width:960px;
+        }
+        #dataShow{
+            width:100%;
+            margin: 0 auto;
+            top: -80px;
+        }
+        .content{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="contener">
+    <button id="renderPdf" style="display: none;">生成pdf</button>
+    <h4></h4>
+    <div class="content">
+        <div class="info">
+            <table class="table" style="width: 960px;margin: 0 auto;">
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="iframe-div">
+            <iframe src="http://spark3:5601/app/kibana#/dashboard/4522b9c0-42ce-11e8-9c4e-33472f948452?_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:now%2Fy,mode:quick,to:now%2Fy))&amp;_a=(description:'',filters:!(),fullScreenMode:!t,options:(darkTheme:!f,hidePanelTitles:!f,useMargins:!t),panels:!((gridData:(h:3,i:'1',w:12,x:0,y:0),id:'28d6e300-443f-11e8-9c4e-33472f948452',panelIndex:'1',type:visualization,version:'6.1.2'),(gridData:(h:3,i:'2',w:12,x:0,y:3),id:'1e65cb60-4445-11e8-9c4e-33472f948452',panelIndex:'2',type:visualization,version:'6.1.2')),query:(language:lucene,query:'taskid:47'),timeRestore:!f,title:demo--45,uiState:(),viewMode:view)" id="dataShow" height="700px"></iframe>
+        </div>
+        <!--<div class="mask-btm"></div>-->
+        <div class="mask"></div>
+        <div class="mask1"></div>
+        <!--<div id="main" style="width: 600px;height:400px;"></div>-->
+    </div>
+</div>
+<!--<script src="https://cdn.bootcss.com/echarts/4.0.4/echarts-en.common.js"></script>-->
+<script src="static/js/report.js"></script>
+<script src="static/scripts/html2canvas.js"></script>
+<script src="static/scripts/jsPdf.debug.js"></script>
+<script src="static/js/toPdf.js"></script>
+</body>
+</html>
+
+

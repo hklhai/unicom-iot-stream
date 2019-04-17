@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <script src="../static/scripts/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/dashboard.js"></script>
+    <link rel="stylesheet" href="../static/css/reset.css" />
+    <link rel="stylesheet" href="../static/css/dashboard.css" />
+    <title>电影</title>
+    <style>
+        p{
+            top: 1740px; /*值为content-95px的高度*/
+        }
+        .content{
+            height: 1800px;  /*高度比iframe大些*/
+        }
+        .content iframe{
+            height: 1785px;
+        }
+        .content2{
+            top: 1740px;  /*值为p的top值*/
+            height: 410px;/*高度比iframe大些*/
+        }
+        .content2 iframe{
+            height: 375px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <iframe src="http://210.14.147.105:5601/app/kibana#/dashboard/49685040-56e6-11e8-91a6-8dc4e1d30ce2?embed=true&amp;_g=(refreshInterval%3A(display%3AOff%2Cpause%3A!f%2Cvalue%3A0)%2Ctime%3A(from%3Anow%2Fd%2Cmode%3Aquick%2Cto%3Anow%2Fd))"></iframe>
+</div>
+<p><span class="more">查看更多...</span></p>
+<div class="content2">
+    <iframe src="http://210.14.147.105:5601/app/kibana#/dashboard/c61b8810-cdc3-11e8-9848-17613e883716?embed=true&amp;_g=(refreshInterval%3A(display%3AOff%2Cpause%3A!f%2Cvalue%3A0)%2Ctime%3A(from%3Anow%2Fd%2Cmode%3Aquick%2Cto%3Anow%2Fd))"></iframe>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Index Page</title>
+    <script src="static/scripts/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div class="content">
+    <a href="${ctx}/system/query" class="query">交互式查询</a><br/>
+    <a href="${ctx}/system/film" class="filming">上映电影</a><br/>
+    <a href="${ctx}/system/netLiterature" class="netLiterature">网络文学</a><br/>
+    <a href="${ctx}/system/variety" class="variety">综艺</a><br/>
+    <a href="${ctx}/system/book" class="book">图书</a><br/>
+    <a href="${ctx}/system/film" class="film">电影</a><br/>
+    <a href="${ctx}/system/tvSeries" class="tvSeries">电视剧</a><br/>
+    <a href="${ctx}/status" class="bigDadaShow">每天数据采集量</a><br/>
+
+
+
+    <!--<a href="${ctx}/system/film" class="filmings">网站展示&#45;&#45;&#45;&#45;上映电影</a><br/>-->
+    <!--<a href="${ctx}/system/netLiterature" class="netLiteratures">网站展示&#45;&#45;&#45;&#45;网络文学</a><br/>-->
+    <!--<a href="${ctx}/system/variety" class="varietys">网站展示&#45;&#45;&#45;&#45;综艺</a><br/>-->
+    <!--<a href="${ctx}/system/book" class="books">网站展示&#45;&#45;&#45;&#45;图书</a><br/>-->
+    <!--<a href="${ctx}/system/film" class="films">网站展示&#45;&#45;&#45;&#45;电影</a><br/>-->
+    <!--<a href="${ctx}/system/tvSeries" class="tvSeriess">网站展示&#45;&#45;&#45;&#45;电视剧</a><br/>-->
+</div>
+<script>
+    function getRootPath_web() {
+        var curWwwPath = window.document.location.href;
+        var pathName = window.document.location.pathname;
+        var pos = curWwwPath.indexOf(pathName);
+        var localhostPaht = curWwwPath.substring(0, pos);
+        var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+        return (localhostPaht + projectName);
+    }
+    var rootPath = getRootPath_web();
+    $('a.filming').attr('href',rootPath+'/system/filming');
+    $('a.netLiterature').attr('href',rootPath+'/system/netLiterature');
+    $('a.variety').attr('href',rootPath+'/system/variety');
+    $('a.book').attr('href',rootPath+'/system/book');
+    $('a.film').attr('href',rootPath+'/system/film');
+    $('a.tvSeries').attr('href',rootPath+'/system/tvSeries');
+    $('a.query').attr('href',rootPath+'/query');
+    $('a.bigDadaShow').attr('href',rootPath+'/status');
+
+//    $('a.filmings').attr('href',rootPath+'/show/filming');
+//    $('a.netLiteratures').attr('href',rootPath+'/show/netLiterature');
+//    $('a.varietys').attr('href',rootPath+'/show/variety');
+//    $('a.books').attr('href',rootPath+'/show/book');
+//    $('a.films').attr('href',rootPath+'/show/film');
+//    $('a.tvSeriess').attr('href',rootPath+'/show/tvSeries');
+</script>
+</body>
+</html>

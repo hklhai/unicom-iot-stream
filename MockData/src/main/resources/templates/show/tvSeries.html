@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>电视剧</title>
+    <style>
+        .mask{
+            width:96%;
+            height:100%;
+            position: fixed;
+            left:0px;
+            top:0px;
+        }
+        .content{
+            width: 100%;
+            height:100%;
+            position: absolute;
+            top: -40px;
+            left: 0px;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        .content iframe{
+            width:100%;
+            height:100%;
+        }
+        .hidden-box{
+            width: 120px;
+            height: 300px;
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            background: #fff;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <iframe src="http://210.14.147.105:5601/app/kibana#/dashboard/b2c97930-56f3-11e8-91a6-8dc4e1d30ce2?embed=true&amp;_g=(refreshInterval%3A(display%3AOff%2Cpause%3A!f%2Cvalue%3A0)%2Ctime%3A(from%3Anow%2Fy%2Cmode%3Aquick%2Cto%3Anow%2Fy))"></iframe>
+</div>
+<div class="hidden-box"></div>
+<div class="mask"></div>
+</body>
+</html>
