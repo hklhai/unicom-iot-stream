@@ -25,6 +25,9 @@ import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumerBase;
 public class ProcessData {
     private final static Integer NUM = 6;
 
+    private final static Integer THRESHOLD = 49;
+
+
     public static void main(String[] args) {
         args = new String[]{"--input-topic", "hk2", "--bootstrap.servers", "spark1:9092",
                 "--zookeeper.connect", "spark1:2181,spark2:2181,spark3:2181", "--group.id", "hk2",
@@ -51,9 +54,8 @@ public class ProcessData {
         env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
 
 
-        FlinkKafkaConsumer010 flinkKafkaConsumer = new FlinkKafkaConsumer010<String>(
+        FlinkKafkaConsumer010 flinkKafkaConsumer = new FlinkKafkaConsumer010<>(
                 parameterTool.getRequired("input-topic"), new SimpleStringSchema(), parameterTool.getProperties());
-//        DataStream<String> input = env.addSource(flinkKafkaConsumer);
 
         FlinkKafkaConsumerBase kafkaConsumerBase = flinkKafkaConsumer.assignTimestampsAndWatermarks(new MessageWaterEmitter());
         DataStream<String> input = env.addSource(kafkaConsumerBase);
@@ -65,7 +67,7 @@ public class ProcessData {
         reduce.addSink(new SinkFunction<Tuple2<String, Integer>>() {
             @Override
             public void invoke(Tuple2<String, Integer> value, Context context) throws Exception {
-                if (value.f1 > 30) {
+                if (value.f1 > THRESHOLD) {
                     System.out.println("设备异常！TingKey：" + value.f0 + " 读数：" + value.f1);
                 }
             }
